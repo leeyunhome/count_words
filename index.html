@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountFlow | 프리미엄 글자수 세기</title>
+    <meta name="description" content="실시간으로 글자 수와 바이트를 계산해주는 가장 세련된 도구입니다. 한글 2바이트 지원.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">📊</span>
+                <h1 id="main-title">CountFlow</h1>
+            </div>
+            <p class="subtitle">당신의 텍스트를 정교하게 분석합니다</p>
+        </header>
+
+        <section class="editor-section">
+            <div class="input-wrapper">
+                <textarea id="text-input" placeholder="여기에 텍스트를 입력하거나 붙여넣으세요..." spellcheck="false"></textarea>
+                <div class="editor-actions">
+                    <button id="clear-btn" class="btn-secondary" title="모두 지우기">
+                        <span>Clear</span>
+                    </button>
+                    <button id="copy-btn" class="btn-primary" title="복사하기">
+                        <span>Copy Text</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card" id="card-total">
+                <div class="stat-info">
+                    <span class="stat-label">공백 포함</span>
+                    <span class="stat-value" id="count-total">0</span>
+                </div>
+                <div class="stat-unit">chars</div>
+            </div>
+
+            <div class="stat-card" id="card-no-space">
+                <div class="stat-info">
+                    <span class="stat-label">공백 제외</span>
+                    <span class="stat-value" id="count-no-space">0</span>
+                </div>
+                <div class="stat-unit">chars</div>
+            </div>
+
+            <div class="stat-card highlight" id="card-bytes">
+                <div class="stat-info">
+                    <span class="stat-label">바이트 (한글 2B)</span>
+                    <span class="stat-value" id="count-bytes">0</span>
+                </div>
+                <div class="stat-unit">bytes</div>
+            </div>
+
+            <div class="stat-card" id="card-words">
+                <div class="stat-info">
+                    <span class="stat-label">단어 수</span>
+                    <span class="stat-value" id="count-words">0</span>
+                </div>
+                <div class="stat-unit">words</div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 CountFlow Premium. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
